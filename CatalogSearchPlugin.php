@@ -169,6 +169,7 @@ class CatalogSearchPlugin extends Omeka_Plugin_AbstractPlugin
     $pageResource = new Zend_Acl_Resource('CatalogSearch_Page');
     $acl->add($indexResource);
     $acl->add($pageResource);
+    $acl->addResource('CatalogSearchSearch');
 
     $acl->allow(array('super', 'admin'), array('CatalogSearch_Index', 'CatalogSearch_Page'));
     $acl->allow(null, 'CatalogSearch_Page', 'show');
